@@ -35,12 +35,7 @@ while true
 do
 	read guess
 
-	is_numeric $guess
-	if	[[ $? -eq 1 ]]
-	then
-		echo "That is not a valid numeric guess :( Try again!"
-		continue
-	fi
+	! is_numeric $guess && echo "That is not a valid numeric guess :( Try again!" && continue
 
 	is_correct $guess
 	if [[ $? -eq 0 ]]
